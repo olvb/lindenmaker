@@ -35,7 +35,9 @@ Scene::Scene()
 
 void Scene::gen_tree()
 {
+    // rule from http://jobtalle.com/lindenmayer_systems.html
     auto axioms = vector<string>{ "BBA", "BBBBA", "BBBBA", "BBBBBA" };
+    // randomize the axiom
     auto axiom = axioms[rand_int_in(0, axioms.size() - 1)];
     auto lsystem = LSystem(
         axiom,
