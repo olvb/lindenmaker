@@ -1,0 +1,8 @@
+.DS_Store
+lindenmaker
+.d
+obj
+*.sublime-project
+*.sublime-workspace
+.gdb_history
+.vscode
