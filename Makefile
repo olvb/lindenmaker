@@ -23,24 +23,24 @@ CXXFLAGS += -fPIC $(shell pkg-config --cflags glfw3 glm)
 LDFLAGS += -lm -ldl $(GL_LDFLAGS) $(shell pkg-config --libs glfw3)
 
 SRCS = $(wildcard src/*.cpp)
-OBJS = $(patsubst src/%.cpp, obj/%.o, $(SRCS))
-DEPS = $(wildcard .d/*.d)
+OBJS = $(patsubst src/%.cpp, build/obj/%.o, $(SRCS))
+DEPS = $(wildcard build/deps/*.d)
 
 .PHONY: all clean
 
-all: $(TARGET)
+all: build/$(TARGET)
 
-$(TARGET): $(OBJS)
+build/$(TARGET): $(OBJS)
 	@mkdir -p $(@D)
 	$(LD) -o $@ $^ $(LDFLAGS)
 
-obj/%.o: src/%.cpp
-	@mkdir -p $(@D) .d/
-	$(CXX) $(CXXFLAGS) -MMD -MF .d/$*.d -c -o $@ $<
+build/obj/%.o: src/%.cpp
+	@mkdir -p $(@D) build/deps/
+	$(CXX) $(CXXFLAGS) -MMD -MF build/deps/$*.d -c -o $@ $<
 
 ifneq ($(MAKECMDGOALS), clean)
 -include $(DEPS)
 endif
 
 clean:
-	$(RM) bin/* obj/*  .d/lib/* .d/demo/*
+	$(RM) -r build/
