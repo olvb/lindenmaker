@@ -14,7 +14,7 @@ uniform mat3 normal_model_view;
 
 vec3 get_post_light_color(vec3 position, vec3 normal, vec3 color) {
     vec3 ambient_color = vec3(1.0f, 1.0f, 1.0f);
-    float ambient_amount = 0.3f;
+    float ambient_amount = 0.7f;
     vec3 ambient = ambient_amount * ambient_color;
 
     vec3 diffuse_color = vec3(1.0f, 1.0f, 1.0f);
