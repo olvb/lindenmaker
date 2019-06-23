@@ -10,13 +10,11 @@
 #include <memory>
 #include <thread>
 
-using namespace std;
 using namespace lindenmaker;
 
 const char* WINDOW_TITLE = "Lindenmaker Demo";
 const int WIDTH = 800;
 const int HEIGHT = 600;
-const float MOVEMENT_SPEED = 2.5f;
 const float KEYBOARD_ROTATION_SPEED = 1.0f;
 const float SCROLL_ZOOM_SPEED = 15.0f; // smaller => faster
 const bool DONT_BURN_MY_GPU = true;
@@ -65,33 +63,6 @@ void handle_keyboard(GLFWwindow* window)
     prev_frame = current_frame;
 }
 
-// void handle_cursor_movement(double x, double y)
-// {
-//     static float x_rotation = 0.0f, y_rotation = 0.0f;
-//     static float prev_x = -1.0f, prev_y = -1.0f;
-
-//     if (prev_x == -1.0f) {
-//         assert(prev_y == -1.0f);
-//         prev_x = x;
-//         prev_y = y;
-//         return;
-//     }
-
-//     float delta_x = x - prev_x;
-//     float delta_y = y - prev_y;
-
-//     x_rotation += delta_x * KEYBOARD_ROTATION_SPEED;
-//     y_rotation -= delta_y * KEYBOARD_ROTATION_SPEED;
-
-//     y_rotation = std::min(y_rotation, (float) M_PI / 2.0f);
-//     y_rotation = std::max(y_rotation, (float) -M_PI / 2.0f);
-
-//     scene->set_tree_rotation(x_rotation, y_rotation);
-
-//     prev_x = x;
-//     prev_y = y;
-// }
-
 void handle_scroll(double y_offset)
 {
     scale += y_offset / SCROLL_ZOOM_SPEED;
@@ -123,11 +94,7 @@ int main(int, char**)
     }
 
     glfwMakeContextCurrent(window);
-    // glfwSetCursorPosCallback(window, [](GLFWwindow* window, double x, double y) {
-    //     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
-    //         handle_cursor_movement(x, y);
-    //     }
-    // });
+
     glfwSetFramebufferSizeCallback(window, [](GLFWwindow*, int width, int height) {
         handle_resize(width, height);
     });

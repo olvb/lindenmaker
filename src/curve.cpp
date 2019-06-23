@@ -2,15 +2,11 @@
 #include <cassert>
 #include <cmath>
 #include <glm/gtc/matrix_transform.hpp>
-using std::tuple;
-using std::vector;
-
-#define GLM_ENABLE_EXPERIMENTAL
-#include "glm/ext.hpp"
-#include "glm/gtx/string_cast.hpp"
-#include <iostream>
 
 namespace lindenmaker {
+
+using std::tuple;
+using std::vector;
 
 const float EPSILON = 0.001f;
 

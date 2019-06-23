@@ -4,20 +4,15 @@
 #include <ctgmath>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-//#include <glm/gtx/normal.hpp>
-//#include <glm/gtx/vector_angle.hpp>
+
 #include "glad.hpp"
 #include <numeric>
+
+namespace lindenmaker {
+
 using std::make_shared;
 using std::shared_ptr;
 using std::vector;
-
-#define GLM_ENABLE_EXPERIMENTAL
-#include "glm/ext.hpp"
-#include "glm/gtx/string_cast.hpp"
-#include <iostream>
-
-namespace lindenmaker {
 
 const VertexIndex RESTART_INDEX = 65535;
 

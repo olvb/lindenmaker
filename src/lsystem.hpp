@@ -16,6 +16,7 @@ public:
     {
         return derive(iter_count, axiom_);
     }
+
     std::string derive(unsigned int iter_count, std::string_view sentence) const;
 
 private:

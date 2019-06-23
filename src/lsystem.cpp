@@ -1,9 +1,10 @@
 #include "lsystem.hpp"
 #include <cstdlib>
-using std::string;
-using std::string_view;
 
 namespace lindenmaker {
+
+using std::string;
+using std::string_view;
 
 LSystem::LSystem(string axiom, const RuleMap& rules)
     : axiom_(axiom), rules_(rules) {}

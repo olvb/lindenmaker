@@ -1,21 +1,15 @@
 #include "branch.hpp"
 #include <cassert>
-#include <glm/ext.hpp>
 #include <stdexcept>
 #include <string>
+
+namespace lindenmaker {
+
 using std::string;
 using std::string_view;
 using std::vector;
 
-#include <iostream>
-#define GLM_ENABLE_EXPERIMENTAL
-#include "glm/ext.hpp"
-#include "glm/gtx/string_cast.hpp"
-
-namespace lindenmaker {
-
 const auto DIRECTION = glm::vec3{ 0.0f, 1.0f, 0.0f };
-const auto ANGLE = glm::radians(15.0f);
 
 struct Turtle
 {

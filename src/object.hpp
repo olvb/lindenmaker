@@ -14,6 +14,7 @@ class Object
 public:
     Transform transform;
 
+    virtual ~Object() = 0;
     virtual void draw(const ShaderProgram& program, const glm::mat4& parent_matrix) const = 0;
 };
 
@@ -23,7 +24,6 @@ class GeometryObject : public Object
 public:
     GeometryObject(std::shared_ptr<Geometry> geometry);
     void draw(const ShaderProgram& program, const glm::mat4& parent_matrix) const;
-    void draw_normals(const ShaderProgram& program, const glm::mat4& parent_matrix) const;
 
 private:
     std::shared_ptr<Geometry> geometry_;

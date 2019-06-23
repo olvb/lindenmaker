@@ -7,16 +7,12 @@
 #include <cstdlib>
 #include <stack>
 #include <vector>
+
+namespace lindenmaker {
+
 using std::stack;
 using std::string;
 using std::vector;
-
-#include "glm/ext.hpp"
-#define GLM_ENABLE_EXPERIMENTAL
-#include "glm/gtx/string_cast.hpp"
-#include <iostream>
-
-namespace lindenmaker {
 
 static float rand_float_in(float min, float max)
 {
