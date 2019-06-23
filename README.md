@@ -1,6 +1,7 @@
 ## Homegrown trees
 
-3D Trees generated using [Lindenmayer systems][1]. Would be nice to add more systems or add support for reading them an external files.
+3D Trees generated using [Lindenmayer systems][1]. Would be nice to add more systems or add support for reading them from external files.
+
 Requirements: [GLM][2] and [GLWF][3]
 
 [1]: https://jobtalle.com/lindenmayer_systems.html
